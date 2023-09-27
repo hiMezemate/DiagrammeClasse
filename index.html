@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <body>
+    <pre class="mermaid">
+        ---
+        title: Diagramme de classes application
+        ---
+        classDiagram
+            User <|-- Login
+            User "1" --> "*" Role
+
+            User : +str nom 
+            User : +str prenom
+            User: +str tel
+
+            User: +getNom() type
+            User: -setNom(param) type
+            User: +get(type) type
+
+            class Login{
+                -str: email
+                -str: paasword
+                +getLogin() : type
+                +setLogin(param) : type
+
+
+            }
+            class Role{
+                - str : role
+                -getRole() : type
+                -setRole(param) : type
+            }
+    </pre>
+
+    <div>
+        Un diagramme simple pour un exemple de site d'information qu'on a vu à l'ecole ou on a 4 roles: Utilisateur, moderateur, administrateur, et visiteur <br>
+        Chaque role a des fonctionalités par exemple: moderateur --- > Gestion d'articles 
+    </div>
+    <script type="module">
+      import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+    </script>
+  </body>
+</html>
